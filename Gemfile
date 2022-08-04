@@ -70,3 +70,11 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+
+
+# Gemfile source "https://rubygems.org"
+
+gem "minitest"
+gem 'bootstrap', '~> 5.1.3'
+gem 'sassc-rails'
