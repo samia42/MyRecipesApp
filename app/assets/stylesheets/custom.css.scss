@@ -1,1 +1,36 @@
 @import "bootstrap";
+$navbar-default-bg: red;
+
+.center{
+    text-align: center;
+}
+.jumbotron{
+    background-image: asset-url('cover_image.jpg');
+    background-size: cover;
+    height: 300px;
+}
+.jumbotron h1,h2{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.display-4{
+    background-color: #f0363685;
+}
+#logo{
+    float: left;
+    font-size: 2em;
+    color: #ed4f44;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    font-weight: bold;
+}
+
+#logo:hover{
+    color: rgb(242, 88, 32);
+    text-decoration: none;
+}
