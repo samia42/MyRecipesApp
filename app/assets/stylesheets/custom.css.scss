@@ -1,5 +1,5 @@
 @import "bootstrap";
-$navbar-default-bg: red;
+
 
 .center{
     text-align: center;
@@ -18,19 +18,26 @@ $navbar-default-bg: red;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
-.display-4{
-    background-color: #f0363685;
-}
+
 #logo{
     float: left;
     font-size: 2em;
-    color: #ed4f44;
+    color: #8C392C;
     text-transform: uppercase;
     letter-spacing: -2px;
     font-weight: bold;
 }
 
 #logo:hover{
-    color: rgb(242, 88, 32);
+    color: #4E2018;
     text-decoration: none;
+}
+.well a{
+    color:#8C392C;
+}
+.mybtn{
+    background-color:#D37F73 ;
+}
+.mylink{
+    color:#8C392C;
 }

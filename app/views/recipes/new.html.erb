@@ -1,0 +1,41 @@
+<h1 align="center" class="p-4" >Add New Recipe</h1>
+<hr />
+
+<% if @recipe.errors.any? %>
+    <h2> Following errors occured</h2>
+    <ul class="alert alert-danger p-4" role="alert"><% @recipe.errors.full_messages.each do |msg| %>
+            <li> <%= msg %> </li>
+        <%end%>
+    </ul>
+<% end %>
+
+<div class="row">
+    <div class="col-md-12">
+        <%= form_for(@recipe , :html =>{class:"form-horizontal", role:"form"}) do |f| %>
+            <div class="form-group row">
+                <div class="control-label col-md-2 offset-1 pt-2 mb-4">
+                    <h4><%= f.label :name%></h4>
+                </div>
+                <div class="col-md-9">
+                    <%= f.text_field :name, class:"form-control", placeholder:"Name of Recipe", autofocus:true %>
+                </div>
+            </div>
+
+            <div class="form-group row">
+            <div class="control-label col-md-2 offset-1  pt-2 ">
+                <h4><%= f.label :description%></h4>
+            </div>
+            <div class="col-md-9">
+                <%= f.text_area :description,rows:10, class:"form-control", placeholder:"Enter steps for recipe" %>
+            </div>
+            <div class="form-group row">
+            <div class="col-md-9 offset-3 " >
+                <%= f.submit class:"btn  btn-lg mybtn  mt-4"  %>
+            </div>
+        </div>
+        <%end%>
+        <div class="col-md-4 offset-6  mt-4 " >
+           [ <%= link_to "Cancel request and return to all recipes", recipes_path , class:"mylink" %> ]
+        </div>
+    </div>
+</div>
