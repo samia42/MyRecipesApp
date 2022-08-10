@@ -1,0 +1,61 @@
+<% if @chef.errors.any? %>
+    <h2> Following errors occured</h2>
+    <ul class="alert alert-danger p-4" role="alert"><% @chef.errors.full_messages.each do |msg| %>
+            <li> <%= msg %> </li>
+        <%end%>
+    </ul>
+<% end %>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <%= form_for(@chef , :html =>{class:"form-horizontal", role:"form"}) do |f| %>
+            <div class="form-group row m-4">
+                <div class="control-label col-md-3 offset-2 pt-2 ">
+                    <h4><%= f.label :chefname, "Name" %></h4>
+                </div>
+                <div class="col-md-6 ">
+                    <%= f.text_field :chefname, class:"form-control", placeholder:"Enter Your Name", autofocus:true %>
+                </div>
+            </div>
+
+            <div class="form-group row m-4">
+                <div class="control-label col-md-3 offset-2  pt-2  ">
+                    <h4><%= f.label :email%></h4>
+                </div>
+                <div class="col-md-6">
+                    <%= f.email_field :email, class:"form-control", placeholder:"Enter your email" %>
+                </div>
+            </div>
+
+            <div class="form-group row m-4">
+                <div class="control-label col-md-3 offset-2  pt-2  ">
+                    <h4><%= f.label :password%></h4>
+                </div>
+                <div class="col-md-6">
+                    <%= f.password_field :password , class:"form-control", placeholder:"Choose Password "%>
+                </div>
+            </div>
+
+            <div class="form-group row m-4" >
+                <div class="control-label col-md-3 offset-2  pt-2 ">
+                    <h4><%= f.label :password_confirmaton , "Confimr Password"%></h4>
+                </div>
+                <div class="col-md-6">
+                    <%= f.password_field :password_confirmaton, class:"form-control", placeholder:"Confirm Password" %>
+                </div>
+            </div>
+
+
+            <div class="form-group row m-4">
+                <div class="col-md-9 offset-2 " >
+                    <%= f.submit(@chef.new_record? ? "Create my Account": "Update my Account", class:"btn  btn-lg mybtn  mt-4" )    %>
+                </div>
+            </div>
+        </div>
+        <%end%>
+        <div class="col-md-4 offset-6  mt-4 " >
+           [ <%= link_to "Cancel request and return to all recipes", recipes_path , class:"mylink" %> ]
+        </div>
+    </div>
+</div>

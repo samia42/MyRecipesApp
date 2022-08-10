@@ -1,0 +1,17 @@
+<h1 class="center p-4"> All Chefs</h1>
+<hr />
+
+<div class ="center m-4">
+  <% @chefs.each do |chef|%>
+    <ul class="listing ">
+    <div class="row">
+      <div class="well col-md-4 offset-4 p-4 bg-light">
+      <li><%= link_to Gravatar_for(chef), chef_path(chef) %></li>
+      <li class="chef-title"><%= link_to chef.chefname.capitalize , chef_path(chef) %></li>
+      <li><small> <%= pluralize(chef.recipes.count , "recipe") if chef.recipes %></small></li>
+      </div>
+    </div>
+    </ul>
+  <% end %>
+
+</div>

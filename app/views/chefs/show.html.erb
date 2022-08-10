@@ -1,0 +1,13 @@
+<h1 class="center p-4">Chef <%= @chef.chefname%>'s Profile</h1>
+
+<hr />
+<div class='row'>
+    <div class="col-md-4 offset-4">
+        <section class="chef_info center">
+        <%= Gravatar_for(@chef, size:150)%>
+        </section>
+    </div>
+</div>
+
+<h4 align="center"><%= @chef.chefname %>'s recipes </h4>
+<%= render 'recipes/recipe', obj: @chef.recipes %>

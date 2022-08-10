@@ -3,5 +3,6 @@ class Chef < ApplicationRecord
     validates :email , presence: true, length: {maximum:255}
 
     has_many :recipes
-    has_secure_password
+    has_secure_password validations: false
+    validates_presence_of :password, on: :create
 end
