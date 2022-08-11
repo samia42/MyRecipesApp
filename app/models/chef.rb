@@ -5,4 +5,5 @@ class Chef < ApplicationRecord
     has_secure_password validations: false
     validates_presence_of :password, on: :create
     default_scope -> { order(updated_at: :desc)}
+    has_many :comments, dependent: :destroy
 end
